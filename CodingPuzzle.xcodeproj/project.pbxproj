@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		FB6176ED2150E21400F7CF80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6176EC2150E21400F7CF80 /* AppDelegate.swift */; };
-		FB6176EF2150E21400F7CF80 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6176EE2150E21400F7CF80 /* ViewController.swift */; };
+		FB6176EF2150E21400F7CF80 /* PuzzleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6176EE2150E21400F7CF80 /* PuzzleListViewController.swift */; };
 		FB6176F22150E21400F7CF80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB6176F02150E21400F7CF80 /* Main.storyboard */; };
 		FB6176F52150E21400F7CF80 /* CodingPuzzle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB6176F32150E21400F7CF80 /* CodingPuzzle.xcdatamodeld */; };
 		FB6176F72150E21400F7CF80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB6176F62150E21400F7CF80 /* Assets.xcassets */; };
 		FB6176FA2150E21400F7CF80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB6176F82150E21400F7CF80 /* LaunchScreen.storyboard */; };
 		FB6177052150E21400F7CF80 /* CodingPuzzleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6177042150E21400F7CF80 /* CodingPuzzleTests.swift */; };
 		FB6177102150E21400F7CF80 /* CodingPuzzleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB61770F2150E21400F7CF80 /* CodingPuzzleUITests.swift */; };
+		FB61772221513CEC00F7CF80 /* PuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB61772121513CEC00F7CF80 /* PuzzleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,7 @@
 /* Begin PBXFileReference section */
 		FB6176E92150E21400F7CF80 /* CodingPuzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodingPuzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB6176EC2150E21400F7CF80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FB6176EE2150E21400F7CF80 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FB6176EE2150E21400F7CF80 /* PuzzleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleListViewController.swift; sourceTree = "<group>"; };
 		FB6176F12150E21400F7CF80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB6176F42150E21400F7CF80 /* CodingPuzzle.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CodingPuzzle.xcdatamodel; sourceTree = "<group>"; };
 		FB6176F62150E21400F7CF80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		FB61770B2150E21400F7CF80 /* CodingPuzzleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodingPuzzleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB61770F2150E21400F7CF80 /* CodingPuzzleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingPuzzleUITests.swift; sourceTree = "<group>"; };
 		FB6177112150E21400F7CF80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB61772121513CEC00F7CF80 /* PuzzleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,11 +101,10 @@
 		FB6176EB2150E21400F7CF80 /* CodingPuzzle */ = {
 			isa = PBXGroup;
 			children = (
-				FB6176EC2150E21400F7CF80 /* AppDelegate.swift */,
-				FB6176EE2150E21400F7CF80 /* ViewController.swift */,
-				FB6176F02150E21400F7CF80 /* Main.storyboard */,
+				FB61771F21513C3900F7CF80 /* Storyboard */,
+				FB61771E21513C2F00F7CF80 /* ViewControllers */,
+				FB61771D21513C2800F7CF80 /* AppDelegate */,
 				FB6176F62150E21400F7CF80 /* Assets.xcassets */,
-				FB6176F82150E21400F7CF80 /* LaunchScreen.storyboard */,
 				FB6176FB2150E21400F7CF80 /* Info.plist */,
 				FB6176F32150E21400F7CF80 /* CodingPuzzle.xcdatamodeld */,
 			);
@@ -126,6 +127,32 @@
 				FB6177112150E21400F7CF80 /* Info.plist */,
 			);
 			path = CodingPuzzleUITests;
+			sourceTree = "<group>";
+		};
+		FB61771D21513C2800F7CF80 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				FB6176EC2150E21400F7CF80 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		FB61771E21513C2F00F7CF80 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FB6176EE2150E21400F7CF80 /* PuzzleListViewController.swift */,
+				FB61772121513CEC00F7CF80 /* PuzzleViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FB61771F21513C3900F7CF80 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				FB6176F02150E21400F7CF80 /* Main.storyboard */,
+				FB6176F82150E21400F7CF80 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +289,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB6176EF2150E21400F7CF80 /* ViewController.swift in Sources */,
+				FB6176EF2150E21400F7CF80 /* PuzzleListViewController.swift in Sources */,
 				FB6176ED2150E21400F7CF80 /* AppDelegate.swift in Sources */,
+				FB61772221513CEC00F7CF80 /* PuzzleViewController.swift in Sources */,
 				FB6176F52150E21400F7CF80 /* CodingPuzzle.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
