@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FB0E3563215503B0009F243D /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0E3562215503B0009F243D /* Utility.swift */; };
+		FB0E356521551F1A009F243D /* PuzzleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0E356421551F1A009F243D /* PuzzleDetailViewController.swift */; };
+		FB0E35692155236D009F243D /* PuzzleListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0E35682155236D009F243D /* PuzzleListTableViewCell.swift */; };
 		FB6176ED2150E21400F7CF80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6176EC2150E21400F7CF80 /* AppDelegate.swift */; };
 		FB6176EF2150E21400F7CF80 /* PuzzleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6176EE2150E21400F7CF80 /* PuzzleListViewController.swift */; };
 		FB6176F22150E21400F7CF80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB6176F02150E21400F7CF80 /* Main.storyboard */; };
@@ -39,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		FB0E3562215503B0009F243D /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		FB0E356421551F1A009F243D /* PuzzleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleDetailViewController.swift; sourceTree = "<group>"; };
+		FB0E35682155236D009F243D /* PuzzleListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleListTableViewCell.swift; sourceTree = "<group>"; };
 		FB6176E92150E21400F7CF80 /* CodingPuzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodingPuzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB6176EC2150E21400F7CF80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB6176EE2150E21400F7CF80 /* PuzzleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleListViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +86,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB0E35662155234A009F243D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FB0E356721552350009F243D /* TableViewCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FB0E356721552350009F243D /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				FB0E35682155236D009F243D /* PuzzleListTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 		FB6176E02150E21400F7CF80 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +125,7 @@
 		FB6176EB2150E21400F7CF80 /* CodingPuzzle */ = {
 			isa = PBXGroup;
 			children = (
+				FB0E35662155234A009F243D /* Cell */,
 				FBF518C72154F68D00A4F48A /* Utility */,
 				FB61771F21513C3900F7CF80 /* Storyboard */,
 				FB61771E21513C2F00F7CF80 /* ViewControllers */,
@@ -147,6 +168,7 @@
 			children = (
 				FB6176EE2150E21400F7CF80 /* PuzzleListViewController.swift */,
 				FB61772121513CEC00F7CF80 /* PuzzleViewController.swift */,
+				FB0E356421551F1A009F243D /* PuzzleDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -303,6 +325,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB0E356521551F1A009F243D /* PuzzleDetailViewController.swift in Sources */,
+				FB0E35692155236D009F243D /* PuzzleListTableViewCell.swift in Sources */,
 				FB6176EF2150E21400F7CF80 /* PuzzleListViewController.swift in Sources */,
 				FB6176ED2150E21400F7CF80 /* AppDelegate.swift in Sources */,
 				FB0E3563215503B0009F243D /* Utility.swift in Sources */,

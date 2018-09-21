@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingPuzzle/ViewControllers/PuzzleViewController.swift"
-            timestampString = "559219981.262552"
+            timestampString = "559230768.4051239"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingPuzzle/ViewControllers/PuzzleViewController.swift"
-            timestampString = "559219981.263177"
+            timestampString = "559230768.405822"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingPuzzle/ViewControllers/PuzzleViewController.swift"
-            timestampString = "559219981.2636729"
+            timestampString = "559230768.406342"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingPuzzle/ViewControllers/PuzzleViewController.swift"
-            timestampString = "559219981.264118"
+            timestampString = "559230768.40721"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingPuzzle/ViewControllers/PuzzleViewController.swift"
-            timestampString = "559219981.26452"
+            timestampString = "559230768.4080811"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingPuzzle/ViewControllers/PuzzleViewController.swift"
-            timestampString = "559219981.264938"
+            timestampString = "559230768.408864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
@@ -106,12 +106,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingPuzzle/Utility/Utility.swift"
-            timestampString = "559219981.265322"
+            timestampString = "559230768.409706"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
             endingLineNumber = "16"
             landmarkName = "showAlert(title:message:action:vc:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CodingPuzzle/ViewControllers/PuzzleViewController.swift"
+            timestampString = "559230768.4098229"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "findStartAndEndWall(startIndex:input:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

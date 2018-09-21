@@ -8,9 +8,10 @@
 
 import UIKit
 
-class PuzzleListViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+class PuzzleListViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, ProtocolPuzzleDetail {
     var aryPuzzleList:Array = [PuzzleType.floydTriangle.rawValue,
-                               PuzzleType.numberTriangle.rawValue]
+                               PuzzleType.numberTriangle.rawValue,
+                               PuzzleType.watertrap.rawValue]
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -38,10 +39,15 @@ class PuzzleListViewController: UIViewController,UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellId = "PuzzleListCellId"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId)
-        cell?.textLabel?.text = self.aryPuzzleList[indexPath.row]
-        return cell!
+        let cellId = "PuzzleListTableViewCell"
+        let cell:PuzzleListTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellId) as! PuzzleListTableViewCell
+        cell.delegate = self as ProtocolPuzzleDetail
+        cell.lblPuzzleName.text = self.aryPuzzleList[indexPath.row]
+        cell.btnPuzzleDetail.isHidden = true
+        if(PuzzleType.watertrap.rawValue == self.aryPuzzleList[indexPath.row]){
+            cell.btnPuzzleDetail.isHidden = false
+        }
+        return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -49,6 +55,14 @@ class PuzzleListViewController: UIViewController,UITableViewDelegate, UITableVie
         let vcPuzzle:PuzzleViewController = storyboard.instantiateViewController(withIdentifier: "PuzzleViewController") as! PuzzleViewController
         vcPuzzle.puzzleType = PuzzleType(rawValue: self.aryPuzzleList[indexPath.row])
         self.navigationController?.pushViewController(vcPuzzle, animated: true)
+    }
+    
+    //MARK:- protocol implementation
+    
+    func showPuzzleDetail() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vcPuzzleDetail:PuzzleDetailViewController = storyboard.instantiateViewController(withIdentifier: "PuzzleDetailViewController") as! PuzzleDetailViewController
+        self.present(vcPuzzleDetail, animated: true, completion: nil)
     }
 
 }

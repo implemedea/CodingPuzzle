@@ -75,6 +75,63 @@ class PuzzleViewController: UIViewController {
        
     }
     
+    func waterTrap(){
+        let aryWaterTank = [3,0,0,2,0,4]
+        var volume = 0
+        let tank = self.findStartAndEndWall(startIndex: 0, input: aryWaterTank)
+        volume = self.calculateVolume(vessel: tank!.space, startNumber: tank!.startNumber, volume: volume)
+        var aryRemain = self.remainingArray(index: tank!.endNumber, input: aryWaterTank)
+        if(aryRemain.count > 0){
+            self.waterTrap()
+        }
+    }
+    
+    func repeatFunc(startIndex: Int, aryWaterTank: Array){
+        let tank = self.findStartAndEndWall(startIndex: 0, input: aryWaterTank)
+        volume = self.calculateVolume(vessel: tank!.space, startNumber: tank!.startNumber, volume: volume)
+        var aryRemain = self.remainingArray(index: tank!.endNumber, input: aryWaterTank)
+    }
+    
+    func remainingArray(index:Int, input:Array<Int>)->Array<Int>{
+        var remainAry:Array<Int> = []
+        while index<input.count{
+            remainAry.append(input[index])
+        }
+        return remainAry
+    }
+    
+    func findStartAndEndWall(startIndex:Int, input:Array<Int>)->(space:Array<Int>, startNumber:Int, endNumber:Int)?{
+        var aryBlock:Array<Int> = []
+        var startNumber:Int? = nil
+        var endNumber:Int? = nil
+        if(startIndex < input.count){
+            for value in startIndex...input.count{
+                print(value)
+            }
+            
+            for(index, element) in input.enumerated(){
+                if(index == 0){
+                    startNumber = element
+                }else{
+                    if(startNumber! < element){
+                        endNumber = index
+                        break
+                    }
+                    aryBlock.append(element)
+                }
+            }
+            return (aryBlock, startNumber!, endNumber!)
+        }
+      return nil
+    }
+    
+    func calculateVolume(vessel:Array<Int>, startNumber:Int, volume:Int)->Int{
+        var volume = volume
+        for(_, element) in vessel.enumerated(){
+            volume = volume + (startNumber - element)
+        }
+        return volume
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -92,6 +149,8 @@ class PuzzleViewController: UIViewController {
             self.floydTriangle()
         case .numberTriangle:
             self.numberTriangle()
+        case .watertrap:
+            self.waterTrap()
         }
         
     }

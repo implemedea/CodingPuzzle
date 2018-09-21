@@ -11,4 +11,5 @@ import Foundation
 enum PuzzleType:String{
     case floydTriangle = "Floyd Triangle"
     case numberTriangle = "Number Triangle"
+    case watertrap = "Water trap"
 }
