@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB0E3563215503B0009F243D /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0E3562215503B0009F243D /* Utility.swift */; };
 		FB6176ED2150E21400F7CF80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6176EC2150E21400F7CF80 /* AppDelegate.swift */; };
 		FB6176EF2150E21400F7CF80 /* PuzzleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6176EE2150E21400F7CF80 /* PuzzleListViewController.swift */; };
 		FB6176F22150E21400F7CF80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB6176F02150E21400F7CF80 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 		FB6177052150E21400F7CF80 /* CodingPuzzleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6177042150E21400F7CF80 /* CodingPuzzleTests.swift */; };
 		FB6177102150E21400F7CF80 /* CodingPuzzleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB61770F2150E21400F7CF80 /* CodingPuzzleUITests.swift */; };
 		FB61772221513CEC00F7CF80 /* PuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB61772121513CEC00F7CF80 /* PuzzleViewController.swift */; };
+		FBF518CA2154F90900A4F48A /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF518C92154F90900A4F48A /* Protocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB0E3562215503B0009F243D /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		FB6176E92150E21400F7CF80 /* CodingPuzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodingPuzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB6176EC2150E21400F7CF80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB6176EE2150E21400F7CF80 /* PuzzleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleListViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		FB61770F2150E21400F7CF80 /* CodingPuzzleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingPuzzleUITests.swift; sourceTree = "<group>"; };
 		FB6177112150E21400F7CF80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB61772121513CEC00F7CF80 /* PuzzleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleViewController.swift; sourceTree = "<group>"; };
+		FBF518C92154F90900A4F48A /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 		FB6176EB2150E21400F7CF80 /* CodingPuzzle */ = {
 			isa = PBXGroup;
 			children = (
+				FBF518C72154F68D00A4F48A /* Utility */,
 				FB61771F21513C3900F7CF80 /* Storyboard */,
 				FB61771E21513C2F00F7CF80 /* ViewControllers */,
 				FB61771D21513C2800F7CF80 /* AppDelegate */,
@@ -153,6 +158,15 @@
 				FB6176F82150E21400F7CF80 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		FBF518C72154F68D00A4F48A /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				FBF518C92154F90900A4F48A /* Protocol.swift */,
+				FB0E3562215503B0009F243D /* Utility.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,8 +305,10 @@
 			files = (
 				FB6176EF2150E21400F7CF80 /* PuzzleListViewController.swift in Sources */,
 				FB6176ED2150E21400F7CF80 /* AppDelegate.swift in Sources */,
+				FB0E3563215503B0009F243D /* Utility.swift in Sources */,
 				FB61772221513CEC00F7CF80 /* PuzzleViewController.swift in Sources */,
 				FB6176F52150E21400F7CF80 /* CodingPuzzle.xcdatamodeld in Sources */,
+				FBF518CA2154F90900A4F48A /* Protocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

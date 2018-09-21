@@ -9,7 +9,14 @@
 import UIKit
 
 class PuzzleListViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
-    var aryPuzzleList:Array = ["Floyd Triangle"]
+    var aryPuzzleList:Array = [PuzzleType.floydTriangle.rawValue,
+                               PuzzleType.numberTriangle.rawValue]
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.navigationBar.topItem?.title = "Puzzles"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -39,8 +46,8 @@ class PuzzleListViewController: UIViewController,UITableViewDelegate, UITableVie
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vcPuzzle = storyboard.instantiateViewController(withIdentifier: "PuzzleViewController")
-        
+        let vcPuzzle:PuzzleViewController = storyboard.instantiateViewController(withIdentifier: "PuzzleViewController") as! PuzzleViewController
+        vcPuzzle.puzzleType = PuzzleType(rawValue: self.aryPuzzleList[indexPath.row])
         self.navigationController?.pushViewController(vcPuzzle, animated: true)
     }
 

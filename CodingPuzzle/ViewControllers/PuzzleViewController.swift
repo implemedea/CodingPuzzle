@@ -13,18 +13,28 @@ class PuzzleViewController: UIViewController {
     //MARK:- IBOutlet
     @IBOutlet weak var txtViewAnswer: UITextView!
     @IBOutlet weak var txtFldInput: UITextField!
+    var puzzleType:PuzzleType!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.title = puzzleType.rawValue
+        
     }
     
     func numberTriangle(){
-        let input = Int(self.txtFldInput.text!)
+        guard let input = self.txtFldInput.text, !input.isEmpty else {
+            Utility.sharedInstance.showAlert(title: "Alert", message: "Please enter number", action: "Ok", vc: self)
+            return
+        }
+        guard let number = Int(input) else{
+            Utility.sharedInstance.showAlert(title: "Alert", message: "Please enter number", action: "Ok", vc: self)
+            return
+        }
+        
         var output = ""
        
         var i = 1
-        while i <= input! {
+        while i <= number {
             var start = 1
             while start <= i{
                 output = output + String(i) + " "
@@ -38,21 +48,31 @@ class PuzzleViewController: UIViewController {
     }
     
     func floydTriangle(){
-        let input = Int(self.txtFldInput.text!)
-        var output = ""
+        guard let input = self.txtFldInput.text, !input.isEmpty  else {
+            Utility.sharedInstance.showAlert(title: "Alert", message: "Please enter number", action: "Ok", vc: self)
+            return
+        }
+        guard let number = Int(input) else{
+            Utility.sharedInstance.showAlert(title: "Alert", message: "Please enter number", action: "Ok", vc: self)
+            return
+        }
         
+        var output = ""
         var i = 1
-        while i <= input! {
+        var count = 1
+        while i <= number {
             var start = 1
-            while start <= i{
+            while start <= count{
                 output = output + String(i) + " "
                 start+=1
                 i+=1
             }
+            count+=1
             output = output + "\n"
         }
         print(output)
         self.txtViewAnswer.text = output
+       
     }
     
 
@@ -67,7 +87,13 @@ class PuzzleViewController: UIViewController {
 
 
     @IBAction func showOutput(_ sender: Any) {
-        self.floydTriangle()
+        switch puzzleType! {
+        case .floydTriangle:
+            self.floydTriangle()
+        case .numberTriangle:
+            self.numberTriangle()
+        }
+        
     }
     
 
