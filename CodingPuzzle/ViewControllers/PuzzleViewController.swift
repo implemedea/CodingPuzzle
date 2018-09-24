@@ -21,6 +21,13 @@ class PuzzleViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK:- Number triangle
+    
     func numberTriangle(){
         guard let input = self.txtFldInput.text, !input.isEmpty else {
             Utility.sharedInstance.showAlert(title: "Alert", message: "Please enter number", action: "Ok", vc: self)
@@ -46,6 +53,8 @@ class PuzzleViewController: UIViewController, UITextFieldDelegate {
         print(output)
         self.txtViewAnswer.text = output
     }
+    
+    //MARK:- Floyd triangle
     
     func floydTriangle(){
         guard let input = self.txtFldInput.text, !input.isEmpty  else {
@@ -75,6 +84,8 @@ class PuzzleViewController: UIViewController, UITextFieldDelegate {
        
     }
     
+    //MARK:- Water trap puzzle
+    
     func waterTrap(aryWaterTank:Array<Int>){
         var vesselSpace:Int = 0
         var isFinished:Bool = false
@@ -83,7 +94,6 @@ class PuzzleViewController: UIViewController, UITextFieldDelegate {
             if(aryWaterTank.count > 2){
                 var vessel = self.findMaxValue(input: aryWaterTank)
                 if(vessel.endIndex == nil){
-//                    vessel = self.findSecondMaxValue(input: aryWaterTank)
                     if let vesselArray = vessel.vessel{
                         let reversed = self.reverseArray(input:vesselArray)
                         aryWaterTank = reversed
@@ -138,39 +148,6 @@ class PuzzleViewController: UIViewController, UITextFieldDelegate {
         return (level:nil, endIndex:nil, vessel:nil)
     }
     
-    /**    3
-     *     | 2
-     *     | | 1
-     *     | | |
-     *     ----------
-     */
-    func findSecondMaxValue(input:Array<Int>)->(level:Int?, endIndex:Int?, vessel:Array<Int>?){
-        var endIndex:Int? = nil
-        var level:Int? = nil
-        var aryBlock:Array<Int> = []
-        if(input.count > 0){
-            var maxValue:Int? = nil
-            var secondMax:Int = 0
-            for(index, element) in input.enumerated(){
-                if(index == 0){
-                    maxValue = element
-                }else{
-                    if(maxValue! > element){
-                        if(element > secondMax){
-                            endIndex = index
-                            secondMax = element
-                            level = secondMax
-                        }
-                        aryBlock.append(element)
-                    }
-                }
-            }
-            aryBlock.removeLast()
-            return (level:level, endIndex:endIndex, vessel:aryBlock)
-        }
-        return (level:nil, endIndex:nil, vessel:nil)
-    }
-    
     func calculateVolume(vessel:Array<Int>, level:Int, volume:Int)->Int{
         var volume = volume
         for(_, element) in vessel.enumerated(){
@@ -199,10 +176,7 @@ class PuzzleViewController: UIViewController, UITextFieldDelegate {
         return reversed
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+   
     
 
     
@@ -216,8 +190,12 @@ class PuzzleViewController: UIViewController, UITextFieldDelegate {
         case .numberTriangle:
             self.numberTriangle()
         case .watertrap:
-            let array = self.txtFldInput.text.flatMap{Int(String($0))}
-            self.waterTrap(aryWaterTank: array)
+            let aryDigit = self.txtFldInput.text?.compactMap{Int(String($0))}
+            if let aryDigit = aryDigit{
+                if(aryDigit.count > 0){
+                    self.waterTrap(aryWaterTank: aryDigit)
+                }
+            }
         }
         
     }
@@ -234,8 +212,10 @@ class PuzzleViewController: UIViewController, UITextFieldDelegate {
 
 }
 
+//MARK:- Extension
+
 extension Int {
     var array: [Int] {
-        return String(self).flatMap{ Int(String($0)) }
+        return String(self).compactMap{ Int(String($0)) }
     }
 }
