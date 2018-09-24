@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PuzzleViewController: UIViewController {
+class PuzzleViewController: UIViewController, UITextFieldDelegate {
     
     //MARK:- IBOutlet
     @IBOutlet weak var txtViewAnswer: UITextView!
@@ -75,62 +75,128 @@ class PuzzleViewController: UIViewController {
        
     }
     
-    func waterTrap(){
-        let aryWaterTank = [3,0,0,2,0,4]
-        var volume = 0
-        let tank = self.findStartAndEndWall(startIndex: 0, input: aryWaterTank)
-        volume = self.calculateVolume(vessel: tank!.space, startNumber: tank!.startNumber, volume: volume)
-        var aryRemain = self.remainingArray(index: tank!.endNumber, input: aryWaterTank)
-        if(aryRemain.count > 0){
-            self.waterTrap()
-        }
-    }
-    
-    func repeatFunc(startIndex: Int, aryWaterTank: Array){
-        let tank = self.findStartAndEndWall(startIndex: 0, input: aryWaterTank)
-        volume = self.calculateVolume(vessel: tank!.space, startNumber: tank!.startNumber, volume: volume)
-        var aryRemain = self.remainingArray(index: tank!.endNumber, input: aryWaterTank)
-    }
-    
-    func remainingArray(index:Int, input:Array<Int>)->Array<Int>{
-        var remainAry:Array<Int> = []
-        while index<input.count{
-            remainAry.append(input[index])
-        }
-        return remainAry
-    }
-    
-    func findStartAndEndWall(startIndex:Int, input:Array<Int>)->(space:Array<Int>, startNumber:Int, endNumber:Int)?{
-        var aryBlock:Array<Int> = []
-        var startNumber:Int? = nil
-        var endNumber:Int? = nil
-        if(startIndex < input.count){
-            for value in startIndex...input.count{
-                print(value)
+    func waterTrap(aryWaterTank:Array<Int>){
+        var vesselSpace:Int = 0
+        var isFinished:Bool = false
+        var aryWaterTank = aryWaterTank
+        repeat{
+            if(aryWaterTank.count > 2){
+                var vessel = self.findMaxValue(input: aryWaterTank)
+                if(vessel.endIndex == nil){
+//                    vessel = self.findSecondMaxValue(input: aryWaterTank)
+                    if let vesselArray = vessel.vessel{
+                        let reversed = self.reverseArray(input:vesselArray)
+                        aryWaterTank = reversed
+                        if(reversed.count > 0){
+                            vessel = self.findMaxValue(input: reversed)
+                        }
+                    }
+                }
+                if let vesselArray = vessel.vessel, let level = vessel.level, let lastIndex = vessel.endIndex{
+                    vesselSpace = self.calculateVolume(vessel: vesselArray, level: level, volume: vesselSpace)
+                    let aryRemain = self.remainingArray(index: lastIndex, input: aryWaterTank)
+                    if(aryRemain.count == 0){
+                        isFinished = true
+                    }else{
+                        aryWaterTank = aryRemain
+                    }
+                }
+            }else{
+                isFinished = true
+                break
             }
-            
+        }while(!isFinished)
+        txtViewAnswer.text = String(vesselSpace)
+    }
+    
+    /**       3
+    *       2 |
+    *     1 | |
+    *     | | |
+    *     ----------
+    */
+    func findMaxValue(input:Array<Int>)->(level:Int?, endIndex:Int?, vessel:Array<Int>?){
+        var endIndex:Int? = nil
+        var level:Int? = nil
+        var aryBlock:Array<Int> = []
+        if(input.count > 0){
+            var maxValue:Int? = nil
             for(index, element) in input.enumerated(){
                 if(index == 0){
-                    startNumber = element
+                    level = element
+                    maxValue = element
                 }else{
-                    if(startNumber! < element){
-                        endNumber = index
+                    if(maxValue! <= element){
+                        endIndex = index
                         break
                     }
                     aryBlock.append(element)
                 }
             }
-            return (aryBlock, startNumber!, endNumber!)
+            return (level:level, endIndex:endIndex, vessel:aryBlock)
         }
-      return nil
+        return (level:nil, endIndex:nil, vessel:nil)
     }
     
-    func calculateVolume(vessel:Array<Int>, startNumber:Int, volume:Int)->Int{
+    /**    3
+     *     | 2
+     *     | | 1
+     *     | | |
+     *     ----------
+     */
+    func findSecondMaxValue(input:Array<Int>)->(level:Int?, endIndex:Int?, vessel:Array<Int>?){
+        var endIndex:Int? = nil
+        var level:Int? = nil
+        var aryBlock:Array<Int> = []
+        if(input.count > 0){
+            var maxValue:Int? = nil
+            var secondMax:Int = 0
+            for(index, element) in input.enumerated(){
+                if(index == 0){
+                    maxValue = element
+                }else{
+                    if(maxValue! > element){
+                        if(element > secondMax){
+                            endIndex = index
+                            secondMax = element
+                            level = secondMax
+                        }
+                        aryBlock.append(element)
+                    }
+                }
+            }
+            aryBlock.removeLast()
+            return (level:level, endIndex:endIndex, vessel:aryBlock)
+        }
+        return (level:nil, endIndex:nil, vessel:nil)
+    }
+    
+    func calculateVolume(vessel:Array<Int>, level:Int, volume:Int)->Int{
         var volume = volume
         for(_, element) in vessel.enumerated(){
-            volume = volume + (startNumber - element)
+            volume = volume + (level - element)
         }
         return volume
+    }
+    
+    func remainingArray(index:Int, input:Array<Int>)->Array<Int>{
+        var index = index
+        var remainAry:Array<Int> = []
+        while index != input.count{
+            remainAry.append(input[index])
+            index+=1
+        }
+        return remainAry
+    }
+    
+    func reverseArray(input:Array<Int>)->Array<Int>{
+        var reversed:Array<Int> = []
+        var count = input.count - 1
+        repeat{
+            reversed.append(input[count])
+            count-=1
+        }while(count>=0)
+        return reversed
     }
 
     override func didReceiveMemoryWarning() {
@@ -150,10 +216,26 @@ class PuzzleViewController: UIViewController {
         case .numberTriangle:
             self.numberTriangle()
         case .watertrap:
-            self.waterTrap()
+            let array = self.txtFldInput.text.flatMap{Int(String($0))}
+            self.waterTrap(aryWaterTank: array)
         }
         
     }
     
+    //MARK:- text field delegate
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let aSet = NSCharacterSet(charactersIn:"0123456789").inverted
+        let compSepByCharInSet = string.components(separatedBy: aSet)
+        let numberFiltered = compSepByCharInSet.joined(separator: "")
+        return string == numberFiltered
+    }
 
+}
+
+extension Int {
+    var array: [Int] {
+        return String(self).flatMap{ Int(String($0)) }
+    }
 }
