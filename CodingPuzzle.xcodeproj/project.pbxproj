@@ -20,6 +20,8 @@
 		FB6177102150E21400F7CF80 /* CodingPuzzleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB61770F2150E21400F7CF80 /* CodingPuzzleUITests.swift */; };
 		FB61772221513CEC00F7CF80 /* PuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB61772121513CEC00F7CF80 /* PuzzleViewController.swift */; };
 		FB6FFF5521A54F3700C5D671 /* TrapRain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6FFF5421A54F3700C5D671 /* TrapRain.swift */; };
+		FB6FFF5721A57DC700C5D671 /* NumberTriangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6FFF5621A57DC700C5D671 /* NumberTriangle.swift */; };
+		FB6FFF5921A5806400C5D671 /* FloydTriangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6FFF5821A5806400C5D671 /* FloydTriangle.swift */; };
 		FBF518CA2154F90900A4F48A /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF518C92154F90900A4F48A /* Protocol.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,8 @@
 		FB6177112150E21400F7CF80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB61772121513CEC00F7CF80 /* PuzzleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleViewController.swift; sourceTree = "<group>"; };
 		FB6FFF5421A54F3700C5D671 /* TrapRain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrapRain.swift; sourceTree = "<group>"; };
+		FB6FFF5621A57DC700C5D671 /* NumberTriangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTriangle.swift; sourceTree = "<group>"; };
+		FB6FFF5821A5806400C5D671 /* FloydTriangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloydTriangle.swift; sourceTree = "<group>"; };
 		FBF518C92154F90900A4F48A /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,6 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				FB6FFF5421A54F3700C5D671 /* TrapRain.swift */,
+				FB6FFF5621A57DC700C5D671 /* NumberTriangle.swift */,
+				FB6FFF5821A5806400C5D671 /* FloydTriangle.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -340,6 +346,8 @@
 				FB0E35692155236D009F243D /* PuzzleListTableViewCell.swift in Sources */,
 				FB6176EF2150E21400F7CF80 /* PuzzleListViewController.swift in Sources */,
 				FB6176ED2150E21400F7CF80 /* AppDelegate.swift in Sources */,
+				FB6FFF5721A57DC700C5D671 /* NumberTriangle.swift in Sources */,
+				FB6FFF5921A5806400C5D671 /* FloydTriangle.swift in Sources */,
 				FB0E3563215503B0009F243D /* Utility.swift in Sources */,
 				FB61772221513CEC00F7CF80 /* PuzzleViewController.swift in Sources */,
 				FB6FFF5521A54F3700C5D671 /* TrapRain.swift in Sources */,

@@ -19,6 +19,16 @@ class PuzzleViewController: UIViewController, UITextFieldDelegate {
             self.txtViewAnswer.text = trapRainResult
         }
     }
+    var numberTriangleResult = ""{
+        didSet{
+            self.txtViewAnswer.text = numberTriangleResult
+        }
+    }
+    var floydTriangleResult:String = ""{
+        didSet{
+            self.txtViewAnswer.text = floydTriangleResult
+        }
+    }
    
     
     override func viewDidLoad() {
@@ -45,21 +55,9 @@ class PuzzleViewController: UIViewController, UITextFieldDelegate {
             Utility.sharedInstance.showAlert(title: "Alert", message: "Please enter number", action: "Ok", vc: self)
             return
         }
-        
-        var output = ""
-       
-        var i = 1
-        while i <= number {
-            var start = 1
-            while start <= i{
-                output = output + String(i) + " "
-                start+=1
-            }
-           output = output + "\n"
-            i+=1
-        }
-        print(output)
-        self.txtViewAnswer.text = output
+        let objNumberTriangle = NumberTriangle()
+        objNumberTriangle.numberTriangle(number: number)
+        self.numberTriangleResult = objNumberTriangle.result
     }
     
     //MARK:- Floyd triangle
@@ -74,22 +72,9 @@ class PuzzleViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        var output = ""
-        var i = 1
-        var count = 1
-        while i <= number {
-            var start = 1
-            while start <= count{
-                output = output + String(i) + " "
-                start+=1
-                i+=1
-            }
-            count+=1
-            output = output + "\n"
-        }
-        print(output)
-        self.txtViewAnswer.text = output
-       
+        let objFloydTriangle = FloydTriangle()
+        objFloydTriangle.floydTriangle(number: number)
+        self.floydTriangleResult = objFloydTriangle.result
     }
     
    

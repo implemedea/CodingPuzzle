@@ -52,4 +52,18 @@ class CodingPuzzleTests: XCTestCase {
         objRainTrap.waterTrap(aryWaterTank: [4,0,3,0,2])
         XCTAssertTrue(Int(objRainTrap.result) == 5, "failed -> [4,0,3,0,2]")
     }
+    
+    func testNumberTriangle(){
+        let objNumberTriangle = NumberTriangle()
+        objNumberTriangle.numberTriangle(number: 4)
+        XCTAssertTrue(objNumberTriangle.result == "1 \n2 2 \n3 3 3 \n4 4 4 4 \n", "failed -> number triangle")
+        
+    }
+    
+    func testFloydTriangle(){
+        let objFloydTriangle = FloydTriangle()
+        objFloydTriangle.floydTriangle(number: 5)
+        XCTAssertTrue(objFloydTriangle.result == "1 \n2 3 \n4 5 6 \n", "failed -> testFloydTriangle")
+        
+    }
 }
