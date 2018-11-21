@@ -33,4 +33,23 @@ class CodingPuzzleTests: XCTestCase {
         }
     }
     
+    func testWaterTrap(){
+        let objRainTrap = TrapRain()
+        objRainTrap.waterTrap(aryWaterTank: [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1])
+        XCTAssertTrue(Int(objRainTrap.result) == 6, "failed -> [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]")
+        objRainTrap.waterTrap(aryWaterTank: [3,0,0,2,0,4])
+        XCTAssertTrue(Int(objRainTrap.result) == 10, "failed -> [3,0,0,2,0,4]")
+        objRainTrap.waterTrap(aryWaterTank: [4,1,2,3])
+        XCTAssertTrue(Int(objRainTrap.result) == 3, "failed -> [4,1,2,3]")
+        objRainTrap.waterTrap(aryWaterTank: [1,2,3,2,1])
+        XCTAssertTrue(Int(objRainTrap.result) == 0, "failed -> [1,2,3,2,1]")
+        objRainTrap.waterTrap(aryWaterTank: [3,2,1,1,2,3])
+        XCTAssertTrue(Int(objRainTrap.result) == 6, "failed -> [3,2,1,1,2,3]")
+        objRainTrap.waterTrap(aryWaterTank: [1,0,2,0,3,0,1])
+        XCTAssertTrue(Int(objRainTrap.result) == 4, "failed -> [1,0,2,0,3,0,1]")
+        objRainTrap.waterTrap(aryWaterTank: [1,0,2,0,3])
+        XCTAssertTrue(Int(objRainTrap.result) == 3, "failed -> [1,0,2,0,3]")
+        objRainTrap.waterTrap(aryWaterTank: [4,0,3,0,2])
+        XCTAssertTrue(Int(objRainTrap.result) == 5, "failed -> [4,0,3,0,2]")
+    }
 }

@@ -9,6 +9,29 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>CodingPuzzle.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>FB6176E82150E21400F7CF80</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FB6176FF2150E21400F7CF80</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FB61770A2150E21400F7CF80</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>

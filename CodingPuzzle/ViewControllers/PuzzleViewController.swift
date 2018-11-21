@@ -14,10 +14,18 @@ class PuzzleViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var txtViewAnswer: UITextView!
     @IBOutlet weak var txtFldInput: UITextField!
     var puzzleType:PuzzleType!
+    var trapRainResult:String = ""{
+        didSet{
+            self.txtViewAnswer.text = trapRainResult
+        }
+    }
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = puzzleType.rawValue
+        
+        
         
     }
     
@@ -84,97 +92,7 @@ class PuzzleViewController: UIViewController, UITextFieldDelegate {
        
     }
     
-    //MARK:- Water trap puzzle
-    
-    func waterTrap(aryWaterTank:Array<Int>){
-        var vesselSpace:Int = 0
-        var isFinished:Bool = false
-        var aryWaterTank = aryWaterTank
-        repeat{
-            if(aryWaterTank.count > 2){
-                var vessel = self.findMaxValue(input: aryWaterTank)
-                if(vessel.endIndex == nil){
-                    if let vesselArray = vessel.vessel{
-                        let reversed = self.reverseArray(input:vesselArray)
-                        aryWaterTank = reversed
-                        if(reversed.count > 0){
-                            vessel = self.findMaxValue(input: reversed)
-                        }
-                    }
-                }
-                if let vesselArray = vessel.vessel, let level = vessel.level, let lastIndex = vessel.endIndex{
-                    vesselSpace = self.calculateVolume(vessel: vesselArray, level: level, volume: vesselSpace)
-                    let aryRemain = self.remainingArray(index: lastIndex, input: aryWaterTank)
-                    if(aryRemain.count == 0){
-                        isFinished = true
-                    }else{
-                        aryWaterTank = aryRemain
-                    }
-                }
-            }else{
-                isFinished = true
-                break
-            }
-        }while(!isFinished)
-        txtViewAnswer.text = String(vesselSpace)
-    }
-    
-    /**       3
-    *       2 |
-    *     1 | |
-    *     | | |
-    *     ----------
-    */
-    func findMaxValue(input:Array<Int>)->(level:Int?, endIndex:Int?, vessel:Array<Int>?){
-        var endIndex:Int? = nil
-        var level:Int? = nil
-        var aryBlock:Array<Int> = []
-        if(input.count > 0){
-            var maxValue:Int? = nil
-            for(index, element) in input.enumerated(){
-                if(index == 0){
-                    level = element
-                    maxValue = element
-                }else{
-                    if(maxValue! <= element){
-                        endIndex = index
-                        break
-                    }
-                    aryBlock.append(element)
-                }
-            }
-            return (level:level, endIndex:endIndex, vessel:aryBlock)
-        }
-        return (level:nil, endIndex:nil, vessel:nil)
-    }
-    
-    func calculateVolume(vessel:Array<Int>, level:Int, volume:Int)->Int{
-        var volume = volume
-        for(_, element) in vessel.enumerated(){
-            volume = volume + (level - element)
-        }
-        return volume
-    }
-    
-    func remainingArray(index:Int, input:Array<Int>)->Array<Int>{
-        var index = index
-        var remainAry:Array<Int> = []
-        while index != input.count{
-            remainAry.append(input[index])
-            index+=1
-        }
-        return remainAry
-    }
-    
-    func reverseArray(input:Array<Int>)->Array<Int>{
-        var reversed:Array<Int> = []
-        var count = input.count - 1
-        repeat{
-            reversed.append(input[count])
-            count-=1
-        }while(count>=0)
-        return reversed
-    }
+   
 
    
     
@@ -193,7 +111,9 @@ class PuzzleViewController: UIViewController, UITextFieldDelegate {
             let aryDigit = self.txtFldInput.text?.compactMap{Int(String($0))}
             if let aryDigit = aryDigit{
                 if(aryDigit.count > 0){
-                    self.waterTrap(aryWaterTank: aryDigit)
+                    let objTrapRain = TrapRain()
+                    objTrapRain.waterTrap(aryWaterTank: aryDigit)
+                    self.trapRainResult = objTrapRain.result
                 }
             }
         }

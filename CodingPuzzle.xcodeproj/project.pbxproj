@@ -19,6 +19,7 @@
 		FB6177052150E21400F7CF80 /* CodingPuzzleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6177042150E21400F7CF80 /* CodingPuzzleTests.swift */; };
 		FB6177102150E21400F7CF80 /* CodingPuzzleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB61770F2150E21400F7CF80 /* CodingPuzzleUITests.swift */; };
 		FB61772221513CEC00F7CF80 /* PuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB61772121513CEC00F7CF80 /* PuzzleViewController.swift */; };
+		FB6FFF5521A54F3700C5D671 /* TrapRain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6FFF5421A54F3700C5D671 /* TrapRain.swift */; };
 		FBF518CA2154F90900A4F48A /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF518C92154F90900A4F48A /* Protocol.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		FB61770F2150E21400F7CF80 /* CodingPuzzleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingPuzzleUITests.swift; sourceTree = "<group>"; };
 		FB6177112150E21400F7CF80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB61772121513CEC00F7CF80 /* PuzzleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleViewController.swift; sourceTree = "<group>"; };
+		FB6FFF5421A54F3700C5D671 /* TrapRain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrapRain.swift; sourceTree = "<group>"; };
 		FBF518C92154F90900A4F48A /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +127,7 @@
 		FB6176EB2150E21400F7CF80 /* CodingPuzzle */ = {
 			isa = PBXGroup;
 			children = (
+				FB6FFF5321A54EDE00C5D671 /* ViewModel */,
 				FB0E35662155234A009F243D /* Cell */,
 				FBF518C72154F68D00A4F48A /* Utility */,
 				FB61771F21513C3900F7CF80 /* Storyboard */,
@@ -180,6 +183,14 @@
 				FB6176F82150E21400F7CF80 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		FB6FFF5321A54EDE00C5D671 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FB6FFF5421A54F3700C5D671 /* TrapRain.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		FBF518C72154F68D00A4F48A /* Utility */ = {
@@ -331,6 +342,7 @@
 				FB6176ED2150E21400F7CF80 /* AppDelegate.swift in Sources */,
 				FB0E3563215503B0009F243D /* Utility.swift in Sources */,
 				FB61772221513CEC00F7CF80 /* PuzzleViewController.swift in Sources */,
+				FB6FFF5521A54F3700C5D671 /* TrapRain.swift in Sources */,
 				FB6176F52150E21400F7CF80 /* CodingPuzzle.xcdatamodeld in Sources */,
 				FBF518CA2154F90900A4F48A /* Protocol.swift in Sources */,
 			);
