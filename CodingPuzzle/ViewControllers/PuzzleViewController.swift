@@ -14,6 +14,9 @@ class PuzzleViewController: UIViewController {
     @IBOutlet weak var txtViewAnswer: UITextView!
     @IBOutlet weak var txtFldInput: UITextField!
     
+    
+    //MARK:- Member variable
+    
     var puzzleType:PuzzleType!
     
     
@@ -35,7 +38,7 @@ class PuzzleViewController: UIViewController {
     var fibonacciResult:[Int] = []{
         didSet{
             let aryString:[String] = fibonacciResult.compactMap{String ($0)}
-            self.txtViewAnswer.text = aryString.joined(separator: ",")
+            self.txtViewAnswer.text = aryString.joined(separator: "\n")
         }
     }
     var cricketPuzzle1Result:String = ""{
@@ -43,6 +46,8 @@ class PuzzleViewController: UIViewController {
             self.txtViewAnswer.text = cricketPuzzle1Result
         }
     }
+    
+    //MARK:- Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,8 +119,8 @@ class PuzzleViewController: UIViewController {
             Utility.sharedInstance.showAlert(title: "Alert", message: "Please enter length of fibonacci series", action: "Ok", vc: self)
             return
         }
-        guard let number = Int(input) else{
-            Utility.sharedInstance.showAlert(title: "Alert", message: "Please enter number", action: "Ok", vc: self)
+        guard let number = Int(input), number <= 47 else{
+            Utility.sharedInstance.showAlert(title: "Alert", message: "Please enter number less than or equal to 47 which is fit for Integer", action: "Ok", vc: self)
             return
         }
         let objFibonacci = FibonacciSeries()

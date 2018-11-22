@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PuzzleListViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, ProtocolPuzzleDetail {
+class PuzzleListViewController: UIViewController {
     var aryPuzzleList:Array = [PuzzleType.floydTriangle.rawValue,
                                PuzzleType.numberTriangle.rawValue,
                                PuzzleType.watertrap.rawValue,
@@ -29,7 +29,10 @@ class PuzzleListViewController: UIViewController,UITableViewDelegate, UITableVie
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+}
+
+extension PuzzleListViewController:UITableViewDelegate, UITableViewDataSource, ProtocolPuzzleDetail{
+   
     //MARK:- tableview datasource
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -51,7 +54,7 @@ class PuzzleListViewController: UIViewController,UITableViewDelegate, UITableVie
         }
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vcPuzzle:PuzzleViewController = storyboard.instantiateViewController(withIdentifier: "PuzzleViewController") as! PuzzleViewController
@@ -74,6 +77,4 @@ class PuzzleListViewController: UIViewController,UITableViewDelegate, UITableVie
         let vcPuzzleDetail:PuzzleDetailViewController = storyboard.instantiateViewController(withIdentifier: "PuzzleDetailViewController") as! PuzzleDetailViewController
         self.present(vcPuzzleDetail, animated: true, completion: nil)
     }
-
 }
-

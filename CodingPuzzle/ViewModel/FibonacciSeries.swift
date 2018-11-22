@@ -13,17 +13,16 @@ class FibonacciSeries: NSObject {
     var aryFibonacci:[Int] = []
     
     final func findFibonacciSeries(count:Int, ary:[Int]){
-        var aryFibonacci:[Int] = ary
+         self.aryFibonacci = ary
         if(aryFibonacci.count >= 2){
-            let previousNum:Int = aryFibonacci[aryFibonacci.count - 2]
-            let currNum:Int = aryFibonacci.last!
+            let previousNum:Int = self.aryFibonacci[self.aryFibonacci.count - 2]
+            let currNum:Int = self.aryFibonacci.last!
             let futureNum:Int = previousNum + currNum
-            aryFibonacci.append(futureNum)
-            if(count != aryFibonacci.count){
-                findFibonacciSeries(count: count, ary: aryFibonacci)
+            self.aryFibonacci.append(futureNum)
+            if(count != self.aryFibonacci.count){
+                findFibonacciSeries(count: count, ary: self.aryFibonacci)
             }
         }
-        self.aryFibonacci = aryFibonacci
     }
     
     
