@@ -14,7 +14,7 @@ class TrapRain: NSObject {
     
     //MARK:- Water trap puzzle
     
-    func waterTrap(aryWaterTank:Array<Int>){
+    final func waterTrap(aryWaterTank:Array<Int>){
         var vesselSpace:Int = 0
         var isFinished:Bool = false
         var aryWaterTank = aryWaterTank
@@ -27,8 +27,6 @@ class TrapRain: NSObject {
                     if(reversed.count > 0){
                         vessel = self.findMaxValue(input: reversed)
                     }
-
-                    
                 }
                 if let vesselArray = vessel.vessel, let level = vessel.level, let lastIndex = vessel.endIndex{
                     vesselSpace = self.calculateVolume(vessel: vesselArray, level: level, volume: vesselSpace)
@@ -53,7 +51,7 @@ class TrapRain: NSObject {
      *     | | |
      *     ----------
      */
-    fileprivate func findMaxValue(input:Array<Int>)->(level:Int?, endIndex:Int?, vessel:Array<Int>?){
+    private func findMaxValue(input:Array<Int>)->(level:Int?, endIndex:Int?, vessel:Array<Int>?){
         var endIndex:Int? = nil
         var level:Int? = nil
         var aryBlock:Array<Int> = []
@@ -76,7 +74,7 @@ class TrapRain: NSObject {
         return (level:nil, endIndex:nil, vessel:nil)
     }
     
-    fileprivate func calculateVolume(vessel:Array<Int>, level:Int, volume:Int)->Int{
+    private func calculateVolume(vessel:Array<Int>, level:Int, volume:Int)->Int{
         var volume = volume
         for(_, element) in vessel.enumerated(){
             volume = volume + (level - element)
@@ -84,7 +82,7 @@ class TrapRain: NSObject {
         return volume
     }
     
-    fileprivate func remainingArray(index:Int, input:Array<Int>)->Array<Int>{
+    private func remainingArray(index:Int, input:Array<Int>)->Array<Int>{
         var index = index
         var remainAry:Array<Int> = []
         while index != input.count{
@@ -94,7 +92,7 @@ class TrapRain: NSObject {
         return remainAry
     }
     
-    fileprivate func reverseArray(input:Array<Int>)->Array<Int>{
+    private func reverseArray(input:Array<Int>)->Array<Int>{
         var reversed:Array<Int> = []
         var count = input.count - 1
         repeat{
@@ -105,3 +103,4 @@ class TrapRain: NSObject {
     }
     
 }
+

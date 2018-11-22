@@ -11,7 +11,9 @@ import UIKit
 class PuzzleListViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, ProtocolPuzzleDetail {
     var aryPuzzleList:Array = [PuzzleType.floydTriangle.rawValue,
                                PuzzleType.numberTriangle.rawValue,
-                               PuzzleType.watertrap.rawValue]
+                               PuzzleType.watertrap.rawValue,
+                               PuzzleType.fibonacciSeries.rawValue,
+                               PuzzleType.cricketpuzzle1.rawValue]
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -55,6 +57,14 @@ class PuzzleListViewController: UIViewController,UITableViewDelegate, UITableVie
         let vcPuzzle:PuzzleViewController = storyboard.instantiateViewController(withIdentifier: "PuzzleViewController") as! PuzzleViewController
         vcPuzzle.puzzleType = PuzzleType(rawValue: self.aryPuzzleList[indexPath.row])
         self.navigationController?.pushViewController(vcPuzzle, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44.0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
     //MARK:- protocol implementation

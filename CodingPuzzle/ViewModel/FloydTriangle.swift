@@ -12,7 +12,7 @@ class FloydTriangle: NSObject {
 
     var result:String = ""
     
-    func floydTriangle(number:Int){
+    final func floydTriangle(number:Int){
         var output = ""
         var i = 1
         var count = 1

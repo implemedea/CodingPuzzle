@@ -12,7 +12,7 @@ class NumberTriangle: NSObject {
     
     var result:String = ""
     
-    func numberTriangle(number:Int){
+    final func numberTriangle(number:Int){
         var output = ""
         
         var i = 1

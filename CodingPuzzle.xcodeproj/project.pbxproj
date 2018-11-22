@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB0A42CB21A6559B00CAF7E2 /* FibonacciSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0A42CA21A6559B00CAF7E2 /* FibonacciSeries.swift */; };
+		FB0A42CD21A6820800CAF7E2 /* CricketPuzzle1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0A42CC21A6820800CAF7E2 /* CricketPuzzle1.swift */; };
 		FB0E3563215503B0009F243D /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0E3562215503B0009F243D /* Utility.swift */; };
 		FB0E356521551F1A009F243D /* PuzzleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0E356421551F1A009F243D /* PuzzleDetailViewController.swift */; };
 		FB0E35692155236D009F243D /* PuzzleListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0E35682155236D009F243D /* PuzzleListTableViewCell.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB0A42CA21A6559B00CAF7E2 /* FibonacciSeries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FibonacciSeries.swift; sourceTree = "<group>"; };
+		FB0A42CC21A6820800CAF7E2 /* CricketPuzzle1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricketPuzzle1.swift; sourceTree = "<group>"; };
 		FB0E3562215503B0009F243D /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		FB0E356421551F1A009F243D /* PuzzleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleDetailViewController.swift; sourceTree = "<group>"; };
 		FB0E35682155236D009F243D /* PuzzleListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleListTableViewCell.swift; sourceTree = "<group>"; };
@@ -195,6 +199,8 @@
 				FB6FFF5421A54F3700C5D671 /* TrapRain.swift */,
 				FB6FFF5621A57DC700C5D671 /* NumberTriangle.swift */,
 				FB6FFF5821A5806400C5D671 /* FloydTriangle.swift */,
+				FB0A42CA21A6559B00CAF7E2 /* FibonacciSeries.swift */,
+				FB0A42CC21A6820800CAF7E2 /* CricketPuzzle1.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -343,12 +349,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB0E356521551F1A009F243D /* PuzzleDetailViewController.swift in Sources */,
+				FB0A42CB21A6559B00CAF7E2 /* FibonacciSeries.swift in Sources */,
 				FB0E35692155236D009F243D /* PuzzleListTableViewCell.swift in Sources */,
 				FB6176EF2150E21400F7CF80 /* PuzzleListViewController.swift in Sources */,
 				FB6176ED2150E21400F7CF80 /* AppDelegate.swift in Sources */,
 				FB6FFF5721A57DC700C5D671 /* NumberTriangle.swift in Sources */,
 				FB6FFF5921A5806400C5D671 /* FloydTriangle.swift in Sources */,
 				FB0E3563215503B0009F243D /* Utility.swift in Sources */,
+				FB0A42CD21A6820800CAF7E2 /* CricketPuzzle1.swift in Sources */,
 				FB61772221513CEC00F7CF80 /* PuzzleViewController.swift in Sources */,
 				FB6FFF5521A54F3700C5D671 /* TrapRain.swift in Sources */,
 				FB6176F52150E21400F7CF80 /* CodingPuzzle.xcdatamodeld in Sources */,
