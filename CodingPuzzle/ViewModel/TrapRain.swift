@@ -22,15 +22,6 @@ class TrapRain: NSObject {
             if(aryWaterTank.count > 2){
                 var vessel = self.findMaxValue(input: aryWaterTank)
                 if(vessel.endIndex == nil){
-//                    if let vesselArray = vessel.vessel{
-//                        let reversed = self.reverseArray(input:vesselArray)
-//                        aryWaterTank = reversed
-//                        if(reversed.count > 0){
-//                            vessel = self.findMaxValue(input: reversed)
-//                        }
-//                    }
-                    
-                    
                     let reversed = self.reverseArray(input:aryWaterTank)
                     aryWaterTank = reversed
                     if(reversed.count > 0){

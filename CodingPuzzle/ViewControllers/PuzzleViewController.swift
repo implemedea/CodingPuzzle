@@ -75,17 +75,11 @@ class PuzzleViewController: UIViewController, UITextFieldDelegate {
         let objFloydTriangle = FloydTriangle()
         objFloydTriangle.floydTriangle(number: number)
         self.floydTriangleResult = objFloydTriangle.result
+        
+        
     }
     
-   
-
-   
-    
-
-    
-    // MARK: - IBAction
-
-
+   // MARK: - IBAction
     @IBAction func showOutput(_ sender: Any) {
         switch puzzleType! {
         case .floydTriangle:
