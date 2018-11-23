@@ -66,4 +66,18 @@ class CodingPuzzleTests: XCTestCase {
         XCTAssertTrue(objFloydTriangle.result == "1 \n2 3 \n4 5 6 \n", "failed -> testFloydTriangle")
         
     }
+    
+    func testFibonacciSeries(){
+        let objFiboSeries = FibonacciSeries()
+        objFiboSeries.findFibonacciSeries(count: 10, ary: [0,1])
+        XCTAssertTrue(objFiboSeries.aryFibonacci == [0,1,1,2,3,5,8,13,21,34] && objFiboSeries.aryFibonacci.count == 10, "fibonacci series failed")
+    }
+    
+    func testCricketPuzzle1(){
+        let objCricket = CricketPuzzle1()
+        objCricket.findPossileWayToScore(requiredRunInOneOver: 1)
+        XCTAssertTrue(objCricket.possible == "Possible ways = 6", "possible ways failed")
+        XCTAssertTrue(objCricket.score.count == 6, "score found error")
+    }
 }
+

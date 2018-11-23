@@ -140,7 +140,7 @@ class PuzzleViewController: UIViewController {
             return
         }
         let objCricketPuzzle1 = CricketPuzzle1()
-        objCricketPuzzle1.cricketPuzzle1(requiredRun: number)
+        objCricketPuzzle1.findPossileWayToScore(requiredRunInOneOver: number)
         let score:String = objCricketPuzzle1.score.joined(separator: "\n")
         self.cricketPuzzle1Result = "\n" + objCricketPuzzle1.possible + "\n" + score 
     }
