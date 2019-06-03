@@ -23,6 +23,11 @@ class PuzzleListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        let objSort = Sort()
+        var input = [4,3,1,5,2]
+        objSort.quickSort(input: &input)
     }
 
     override func didReceiveMemoryWarning() {
