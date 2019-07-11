@@ -13,7 +13,8 @@ class PuzzleListViewController: UIViewController {
                                PuzzleType.numberTriangle.rawValue,
                                PuzzleType.watertrap.rawValue,
                                PuzzleType.fibonacciSeries.rawValue,
-                               PuzzleType.cricketpuzzle1.rawValue]
+                               PuzzleType.cricketpuzzle1.rawValue,
+                               PuzzleType.balancedBracket.rawValue]
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -25,9 +26,10 @@ class PuzzleListViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         
+        
         let objSort = Sort()
         var input = [4,3,1,5,2]
-        objSort.quickSort(input: &input)
+//        objSort.quickSort(input: &input)
     }
 
     override func didReceiveMemoryWarning() {

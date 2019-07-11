@@ -46,14 +46,20 @@ class PuzzleViewController: UIViewController {
             self.txtViewAnswer.text = cricketPuzzle1Result
         }
     }
+    var balancedBracketResult: String = "" {
+        didSet {
+            self.txtViewAnswer.text = balancedBracketResult
+        }
+    }
     
     //MARK:- Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = puzzleType.rawValue
-        
-        
+        if puzzleType == .balancedBracket {
+            self.txtFldInput.keyboardType = .default
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -145,6 +151,17 @@ class PuzzleViewController: UIViewController {
         self.cricketPuzzle1Result = "\n" + objCricketPuzzle1.possible + "\n" + score 
     }
     
+    //MARK:- Balanced bracket
+    
+    func balancedBracket() {
+        guard let input = self.txtFldInput.text, !input.isEmpty  else {
+            Utility.sharedInstance.showAlert(title: "Alert", message: "Please enter brackets", action: "Ok", vc: self)
+            return
+        }
+        let bracket = BalancedBracket()
+        self.balancedBracketResult = bracket.checkBalancedBracket(bracket: input)
+    }
+    
     
    // MARK: - IBAction
     @IBAction func showOutput(_ sender: Any) {
@@ -159,9 +176,9 @@ class PuzzleViewController: UIViewController {
             self.fibonacciSeries()
         case .cricketpuzzle1:
             self.cricketPuzzle1()
+        case .balancedBracket:
+            self.balancedBracket()
         }
-        
-        
     }
 }
 
@@ -177,10 +194,12 @@ extension PuzzleViewController: UITextFieldDelegate {
     //MARK:- text field delegate
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        let aSet = NSCharacterSet(charactersIn:"0123456789").inverted
-        let compSepByCharInSet = string.components(separatedBy: aSet)
-        let numberFiltered = compSepByCharInSet.joined(separator: "")
-        return string == numberFiltered
+        if puzzleType != .balancedBracket {
+            let aSet = NSCharacterSet(charactersIn:"0123456789").inverted
+            let compSepByCharInSet = string.components(separatedBy: aSet)
+            let numberFiltered = compSepByCharInSet.joined(separator: "")
+            return string == numberFiltered
+        }
+        return true
     }
 }
